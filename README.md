@@ -65,7 +65,7 @@ Contributions to improve this code are welcome! Feel free to submit a pull reque
 
 License
 
-This project is licensed under the Apache License 2.0 – see the LICENSE file for details.
+This project is licensed under the GNU General Public License – see the LICENSE file for details.
 
 Contact
 
