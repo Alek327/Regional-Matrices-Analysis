@@ -1,0 +1,45 @@
+# Step 1: Extract 6 matrices of size 43x6
+
+# Initialize a list to store the extracted matrices
+extracted_matrices <- list()
+
+# Assuming mrio6reg[[2]] has dimensions 6x6x43 (6 regions, 6 variables, 43 sectors)
+# Loop through the first dimension (6 regions) and extract 43x6 matrices
+for (i in 1:6) {
+  # Transpose to get a 43x6 matrix for each region
+  extracted_matrices[[i]] <- t(mrio6reg[[2]][i, , ])
+}
+
+# Assign names to the matrices based on the regions
+names(extracted_matrices) <- c("NW", "NE", "Toscana", "Centro", "Sud", "Ext")
+
+# Verify the dimensions of the extracted matrices (should return (43, 6) for each)
+print(lapply(extracted_matrices, dim))
+
+# Step 2: Save all matrices in a single Excel file
+
+# Install the 'openxlsx' package if not already installed
+# install.packages("openxlsx")
+
+# Load the openxlsx library
+library(openxlsx)
+
+# Initialize a new Excel workbook
+wb <- createWorkbook()
+
+# Loop through each extracted matrix and add it to the workbook as a new sheet
+for (i in 1:length(extracted_matrices)) {
+  # Get the region name and the matrix
+  region_name <- names(extracted_matrices)[i]
+  region_matrix <- extracted_matrices[[i]]
+  
+  # Add a new sheet for each region and write the matrix
+  addWorksheet(wb, region_name)
+  writeData(wb, sheet = region_name, region_matrix)
+}
+
+# Save the workbook to an Excel file
+saveWorkbook(wb, file = "regions_matrices.xlsx", overwrite = TRUE)
+
+# Print a message to confirm the file has been saved
+cat("All matrices have been saved to 'regions_matrices.xlsx'\n")
