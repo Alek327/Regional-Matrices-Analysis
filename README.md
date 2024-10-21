@@ -1,10 +1,10 @@
-Regional Matrices Analysis (MUST4Water Project)
+# Regional Matrices Analysis (MUST4Water Project)
 
-Overview
+# Overview
 
 This repository contains R code developed as part of the MUST4Water project, focused on regional economic analysis and water management. The code automates the process of extracting, analyzing, and saving sectoral trade matrices from MRIO (Multi-Regional Input-Output) data. The matrices are organized by region and exported to a single Excel file for further analysis.
 
-Features
+# Features
 
 Efficient extraction and transformation of MRIO data into 43x6 matrices for each region.
 Automated export of the extracted matrices into a single Excel file with separate sheets for each region.
@@ -63,11 +63,11 @@ Contributing
 
 Contributions to improve this code are welcome! Feel free to submit a pull request or open an issue.
 
-License
+# License
 
 This project is licensed under the GNU General Public License – see the LICENSE file for details.
 
-Contact
+# Contact
 
 For questions or further information, please contact:
 
