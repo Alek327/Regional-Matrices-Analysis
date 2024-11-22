@@ -14,7 +14,7 @@ Installation
 Clone this repository:
 bash
 Copy code
-git clone https://github.com/yourusername/Regional-Matrices-Analysis.git
+git clone https://github.com/Alek327/Regional-Matrices-Analysis.git
 Ensure that you have R installed on your system. If not, download it from CRAN.
 Install the necessary R packages by running:
 r
